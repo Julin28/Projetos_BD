@@ -1,0 +1,18 @@
+Exercício HSMU -- BD -- NOSQL
+
+
+a) Retorne todos os documentos que possuem o nome da empresa igual a 15/Empresa;
+
+db.Venda.find({Empresa: "15/Empresa"})
+
+b) Delete os documentos que possuem o nome do empregado igual a 54/José Santos;
+
+db.Venda.deleteOne({Empregado: "54/José Santos"}
+
+c) Apague o campo Região de todos os documentos;
+
+db.Venda.updateMany({ }, { $unset: { Região: "" } })
+
+d) Atualize o campo CEP para 11111 nos documentos que tiverem o campo País igual a Brasil.
+
+db.Venda.updateOne({País: "Brasil"}, {$set: {CEP:11111}})
